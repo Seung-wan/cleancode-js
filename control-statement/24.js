@@ -1,3 +1,5 @@
+// 24. else if 피하기
+
 // 아래와 같은 else if문 사용하지 말 것.
 // if문으로 처리할 수 있다.
 const x = 1;
@@ -6,6 +8,15 @@ if (x >= 0) {
   console.log('x는 0보다 크거나 같다.');
 } else if (x > 0) {
   console.log('x는 0보다 크다');
+}
+
+// 위의 else if는 아래의 문장과 같다.
+if (x >= 0) {
+  console.log('x는 0보다 크거나 같다.');
+} else {
+  if (x > 0) {
+    console.log('x는 0보다 크다');
+  }
 }
 
 // else if -> if
@@ -20,4 +31,5 @@ if (x > 0) {
 }
 
 // 복잡해진다면, switch문 고려
-// lookup table도 로직에 따라서 좋을 것 같다.
+
+// key로 떨어지지 않는 범위 조건의 경우에는 lookup table로 작성하기엔 조금 불편한 것 같다.
